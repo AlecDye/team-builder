@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 const TeamForm = props => {
     const [member, setMember] = useState({
@@ -17,17 +18,25 @@ const TeamForm = props => {
         setMember({ name: "", role: "", email: "", quote: "" });
     }
     return (
-        <form onSubmit={submitForm}>
-            <label htmlFor="name">Name: </label>
-            <input id="name" type="text" name="name" onChange={handleChanges} placeholder="Hulk Hogan" value={member.name} />
-            <label htmlFor="role">Role: </label>
-            <input id="role" type="text" name="role" onChange={handleChanges} placeholder="Wrestling Champion" value={member.role} />
-            <label htmlFor="email">Email: </label>
-            <input id="email" type="text" name="email" onChange={handleChanges} placeholder="Hulkster@AOL.com" value={member.email} />
-            <label htmlFor="quote">Quote: </label>
-            <textarea id="quote" type="text" name="quote" onChange={handleChanges} placeholder="Hulkamania is running wild!" value={member.quote} />
-            <button type="submit">Join the Team</button>
-        </form>
+        <Form onSubmit={submitForm}>
+            <FormGroup>
+                <Label htmlFor="name">Name: </Label>
+                <Input id="name" type="text" name="name" onChange={handleChanges} placeholder="Hulk Hogan" value={member.name} />
+            </FormGroup>
+            <FormGroup>
+                <Label htmlFor="role">Role: </Label>
+                <Input id="role" type="text" name="role" onChange={handleChanges} placeholder="Wrestling Champion" value={member.role} />
+            </FormGroup>
+            <FormGroup>
+                <Label htmlFor="email">Email: </Label>
+                <Input id="email" type="text" name="email" onChange={handleChanges} placeholder="Hulkster@AOL.com" value={member.email} />
+            </FormGroup>
+            <FormGroup>
+                <Label htmlFor="quote">Quote: </Label>
+                <Input id="quote" type="textarea" name="quote" onChange={handleChanges} placeholder="Hulkamania is running wild!" value={member.quote} />
+            </FormGroup>
+            <Button type="submit">Join the Team</Button>
+        </Form>
     );
 };
 

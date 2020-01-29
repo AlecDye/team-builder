@@ -1,8 +1,9 @@
 import React from "react";
+import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 
 //* maps through props and grabs data to make a team member card
 const TeamMember = props => {
-    console.log(props);
+    // console.log(props);
     return (
         <div>
             {props.member.map(member => (
