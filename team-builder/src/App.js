@@ -5,7 +5,7 @@ import './App.css';
 
 // id: number, name: string, occupation: string, quote: string (textarea)
 function App() {
-  const [member, setMember] = useState([
+  const [members, setMember] = useState([
     {
       id: 1,
       name: "Alec Dye",
@@ -23,13 +23,13 @@ function App() {
       quote: member.quote
     };
     //! ERROR: member is not iterable (line 26)
-    setMember([...member, newMember]);
+    setMember([...members, newMember]);
   };
   // rendering components and passing props into components
   return (
     <div className="App">
       <h1>Dream Team</h1>
-      <TeamMember member={member} />
+      <TeamMember member={members} />
       <Form addNewMember={addNewMember} />
     </div>
   );
