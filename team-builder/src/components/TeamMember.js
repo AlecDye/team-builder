@@ -2,7 +2,6 @@ import React from "react";
 
 //* maps through props and grabs data to make a team member card
 const TeamMember = props => {
-    //! not getting correct props
     console.log(props);
     return (
         <div>

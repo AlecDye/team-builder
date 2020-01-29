@@ -18,14 +18,18 @@ function App() {
     const newMember = {
       id: Date.now(),
       name: member.name,
+      role: member.role,
+      email: member.email,
+      quote: member.quote
     };
     setMember([...member, newMember]);
   };
+  // rendering components and passing props into components
   return (
     <div className="App">
       <h1>Dream Team</h1>
       <TeamMember member={member} />
-      <Form />
+      <Form addNewMember={addNewMember} />
     </div>
   );
 }
