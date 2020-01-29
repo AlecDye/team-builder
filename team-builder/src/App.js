@@ -7,7 +7,7 @@ import './App.css';
 function App() {
   const [member, setMember] = useState([
     {
-      id: 0,
+      id: 1,
       name: "Alec Dye",
       role: "Developer",
       email: "alec@internet.com",
@@ -22,6 +22,7 @@ function App() {
       email: member.email,
       quote: member.quote
     };
+    //! ERROR: member is not iterable (line 26)
     setMember([...member, newMember]);
   };
   // rendering components and passing props into components
