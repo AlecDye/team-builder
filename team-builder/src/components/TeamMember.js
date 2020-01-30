@@ -1,20 +1,23 @@
 import React from "react";
-import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import {
+    Card, Button, CardImg, CardTitle, CardText, CardGroup, CardSubtitle, CardBody
+} from "reactstrap";
+
 
 //* maps through props and grabs data to make a team member card
 const TeamMember = props => {
     // console.log(props);
     return (
-        <div>
+        <CardGroup>
             {props.member.map(member => (
-                <div className="member-card" key={member.id}>
-                    <h2>{member.name}</h2>
-                    <p>{member.role}</p>
-                    <p>{member.email}</p>
-                    <p>{member.quote}</p>
-                </div>
+                <Card className="member-card" key={member.id}>
+                    <CardTitle>{member.name}</CardTitle>
+                    <CardSubtitle>{member.role}</CardSubtitle>
+                    <CardText>{member.email}</CardText>
+                    <CardText>{member.quote}</CardText>
+                </Card>
             ))}
-        </div>
+        </CardGroup>
     );
 };
 

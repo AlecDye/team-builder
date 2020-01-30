@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import TeamMember from './components/TeamMember';
 import Form from './components/Form';
+import { Jumbotron, Container } from 'reactstrap';
 import './App.css';
 
 // id: number, name: string, occupation: string, quote: string (textarea)
@@ -22,15 +23,16 @@ function App() {
       email: member.email,
       quote: member.quote
     };
-    //! ERROR: member is not iterable (line 26)
     setMember([...members, newMember]);
   };
   // rendering components and passing props into components
   return (
     <div className="App">
-      <h1>Dream Team</h1>
-      <TeamMember member={members} />
-      <Form addNewMember={addNewMember} />
+      <Jumbotron fluid>Dream Team</Jumbotron>
+      <Container fluid>
+        <TeamMember member={members} />
+        <Form addNewMember={addNewMember} />
+      </Container>
     </div>
   );
 }

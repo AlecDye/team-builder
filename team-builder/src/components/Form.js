@@ -20,23 +20,28 @@ const TeamForm = props => {
     return (
         <Form onSubmit={submitForm}>
             <FormGroup>
-                <Label htmlFor="name">Name: </Label>
+                <Label htmlFor="name">Name</Label>
                 <Input id="name" type="text" name="name" onChange={handleChanges} placeholder="Hulk Hogan" value={member.name} />
             </FormGroup>
             <FormGroup>
-                <Label htmlFor="role">Role: </Label>
-                <Input id="role" type="text" name="role" onChange={handleChanges} placeholder="Wrestling Champion" value={member.role} />
+                <Label htmlFor="role">Role</Label>
+                <Input id="role" type="select" name="role" onChange={handleChanges} value={member.role} >
+                    <option>Wrestling Champion</option>
+                    <option>Web Developer</option>
+                    <option>UI Designer</option>
+                    <option>Project Manager</option>
+                </Input>
             </FormGroup>
             <FormGroup>
-                <Label htmlFor="email">Email: </Label>
-                <Input id="email" type="text" name="email" onChange={handleChanges} placeholder="Hulkster@AOL.com" value={member.email} />
+                <Label htmlFor="email">Email</Label>
+                <Input id="email" type="text" name="email" onChange={handleChanges} placeholder="Hulkster@aol.com" value={member.email} />
             </FormGroup>
             <FormGroup>
-                <Label htmlFor="quote">Quote: </Label>
+                <Label htmlFor="quote">Quote</Label>
                 <Input id="quote" type="textarea" name="quote" onChange={handleChanges} placeholder="Hulkamania is running wild!" value={member.quote} />
             </FormGroup>
             <Button type="submit">Join the Team</Button>
-        </Form>
+        </Form >
     );
 };
 
